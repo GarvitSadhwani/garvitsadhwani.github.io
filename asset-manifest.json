@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.beeebac2.css",
+    "main.css": "/static/css/main.64eee18b.css",
     "main.js": "/static/js/main.f19cf003.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/bsc.jpg": "/static/media/bsc.238ea341c48f38d1dbd2.jpg",
@@ -16,12 +16,12 @@
     "static/media/postgresql.png": "/static/media/postgresql.28c6c77edeb0d27dc66c.png",
     "static/media/golang.png": "/static/media/golang.6a3cd1884425f3b03c7d.png",
     "index.html": "/index.html",
-    "main.beeebac2.css.map": "/static/css/main.beeebac2.css.map",
+    "main.64eee18b.css.map": "/static/css/main.64eee18b.css.map",
     "main.f19cf003.js.map": "/static/js/main.f19cf003.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.beeebac2.css",
+    "static/css/main.64eee18b.css",
     "static/js/main.f19cf003.js"
   ]
 }
