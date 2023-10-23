@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.c6038f20.css",
-    "main.js": "/static/js/main.7350395f.js",
+    "main.css": "/static/css/main.eb189a58.css",
+    "main.js": "/static/js/main.f19cf003.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/bsc.jpg": "/static/media/bsc.238ea341c48f38d1dbd2.jpg",
-    "static/media/favicon.ico": "/static/media/favicon.c7f69fe6c578ad9dc149.ico",
     "static/media/display.jpeg": "/static/media/display.0d243242e5bf3bdec084.jpeg",
     "static/media/simplitask1.jpg": "/static/media/simplitask1.e6eba86f40c9d10b5e4d.jpg",
     "static/media/cpp.png": "/static/media/cpp.fc461cc8303a38559c80.png",
@@ -17,12 +16,12 @@
     "static/media/postgresql.png": "/static/media/postgresql.28c6c77edeb0d27dc66c.png",
     "static/media/golang.png": "/static/media/golang.6a3cd1884425f3b03c7d.png",
     "index.html": "/index.html",
-    "main.c6038f20.css.map": "/static/css/main.c6038f20.css.map",
-    "main.7350395f.js.map": "/static/js/main.7350395f.js.map",
+    "main.eb189a58.css.map": "/static/css/main.eb189a58.css.map",
+    "main.f19cf003.js.map": "/static/js/main.f19cf003.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6038f20.css",
-    "static/js/main.7350395f.js"
+    "static/css/main.eb189a58.css",
+    "static/js/main.f19cf003.js"
   ]
 }
