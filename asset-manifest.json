@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.aac7b9a8.css",
-    "main.js": "/static/js/main.87305b16.js",
+    "main.css": "/static/css/main.db6350c8.css",
+    "main.js": "/static/js/main.04984235.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/bsc.jpg": "/static/media/bsc.238ea341c48f38d1dbd2.jpg",
     "static/media/display.jpeg": "/static/media/display.0d243242e5bf3bdec084.jpeg",
     "static/media/simplitask1.jpg": "/static/media/simplitask1.e6eba86f40c9d10b5e4d.jpg",
-    "static/media/stift1.png": "/static/media/stift1.229f136c0e5dbbae9405.png",
+    "static/media/stift1.png": "/static/media/stift1.80af2b321b591ec23b58.png",
     "static/media/cpp.png": "/static/media/cpp.fc461cc8303a38559c80.png",
     "static/media/tech.png": "/static/media/tech.e0339bbcbc09e5cbd645.png",
     "static/media/react.png": "/static/media/react.e648a71158884495e955.png",
@@ -17,12 +17,12 @@
     "static/media/postgresql.png": "/static/media/postgresql.28c6c77edeb0d27dc66c.png",
     "static/media/golang.png": "/static/media/golang.6a3cd1884425f3b03c7d.png",
     "index.html": "/index.html",
-    "main.aac7b9a8.css.map": "/static/css/main.aac7b9a8.css.map",
-    "main.87305b16.js.map": "/static/js/main.87305b16.js.map",
+    "main.db6350c8.css.map": "/static/css/main.db6350c8.css.map",
+    "main.04984235.js.map": "/static/js/main.04984235.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aac7b9a8.css",
-    "static/js/main.87305b16.js"
+    "static/css/main.db6350c8.css",
+    "static/js/main.04984235.js"
   ]
 }
