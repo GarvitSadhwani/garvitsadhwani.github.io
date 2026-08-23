@@ -1,15 +1,15 @@
-import error from '../elements/error.jpg'
-function Landing(){
-    return (
-        <div>
-            <div style={{position:'fixed',top:'20vh',left:'35vw',alignItems:'center'}}>
-                <img src={error} style={{height:'50vh'}} alt='Error'/>
-                <div style={{fontSize:'50px',textAlign:'center'}}>
-                    Error 404
-                </div>
-            </div>
-        </div>
-    );
+import React from 'react';
+
+function Notfound() {
+  return (
+    <main className="notfound">
+      <div className="glass notfound-card">
+        <div className="notfound-code">404</div>
+        <p className="notfound-text">This page wandered off. Let's get you back.</p>
+        <a className="btn btn-primary" href="/#/">Back home</a>
+      </div>
+    </main>
+  );
 }
 
-export default Landing;
+export default Notfound;

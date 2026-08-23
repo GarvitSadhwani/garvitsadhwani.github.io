@@ -1,32 +1,40 @@
-import display from '../elements/display.jpeg';
-import {AiOutlineLinkedin,AiOutlineMail,AiOutlineInstagram} from 'react-icons/ai'
+import React from 'react';
+import { AiOutlineLinkedin, AiOutlineMail, AiOutlineInstagram } from 'react-icons/ai';
+import { contact } from '../data/resume';
 
-function About(){
-    return (
-        <div className='view-about'>
-            <div className='about-content'>
-                <div className='about-title'>Nice to meet you!</div>
-                <p>
-                I'm Garvit, a passionate Software Developer. 
-                <br/><br/>
-                I completed my Bachelor's in Electronics and Electrical Engineering (EEE) and Masters's in Physics from BITS Pilani in 2023. 
-                <br/><br/>
-                I have always been interested in problem solving and love exploring new things. I love to play badminton and go for an occasional swim. In my free time you can find me playing video games or reading books.
-                I love to go on trips as well, I am a beach person all the way.
-                <br/><br/>
-                Currently I am living in Bengaluru, India. Cruising through traffic and partying on the weekends.
-                Let's catch up sometime!
-                </p>
-                <div className='about-contact'>
-                    <a target='_blank' className='about-contact-icon' href='https://www.instagram.com/garvit.sdh/' rel='noreferrer'><AiOutlineInstagram size={'25px'}/></a>
-                    <a target='_blank' className='about-contact-icon' href='https://www.linkedin.com/in/garvit-sadhwani-8a76b016b/' rel='noreferrer'><AiOutlineLinkedin size={'25px'}/></a>
-                    <a target='_blank' className='about-contact-icon' href='mailto:garvit.sadh@gmail.com' rel='noreferrer'><AiOutlineMail size={'25px'}/></a>
-                </div>
-                
-            </div>
-            <img className='display' src={display} alt='display'/>
+function About() {
+  return (
+    <main className="about">
+      <div className="glass about-card">
+        <h1 className="about-title">Nice to meet you</h1>
+        <p className="about-text">
+          I'm Garvit, a backend software engineer who enjoys designing systems that stay
+          fast and reliable under serious load.
+        </p>
+        <p className="about-text">
+          I completed my dual degree in Electrical &amp; Electronics Engineering from
+          BITS Pilani in 2023. I've always been drawn to problem solving and to
+          understanding how things work end to end.
+        </p>
+        <p className="about-text">
+          Away from the keyboard you'll find me playing badminton, gaming, reading, or
+          planning the next trip — a beach person all the way. Currently based in
+          Bengaluru, India. Let's catch up sometime!
+        </p>
+        <div className="about-contact">
+          <a className="icon-link" target="_blank" rel="noreferrer" href="https://www.instagram.com/garvit.sdh/" aria-label="Instagram">
+            <AiOutlineInstagram size="1.5rem" />
+          </a>
+          <a className="icon-link" target="_blank" rel="noreferrer" href={contact.linkedin} aria-label="LinkedIn">
+            <AiOutlineLinkedin size="1.5rem" />
+          </a>
+          <a className="icon-link" target="_blank" rel="noreferrer" href={`mailto:${contact.email}`} aria-label="Email">
+            <AiOutlineMail size="1.5rem" />
+          </a>
         </div>
-    );
+      </div>
+    </main>
+  );
 }
 
 export default About;
