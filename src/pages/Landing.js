@@ -1,8 +1,9 @@
 import React from 'react';
-import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
-import Experience from '../components/Experience';
+import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail, AiOutlineInstagram } from 'react-icons/ai';
+import ExperienceTabs from '../components/ExperienceTabs';
 import Project from '../components/Project';
-import { summary, experience, projects, education, contact } from '../data/resume';
+import { summary, aboutPersonal, experience, projects, education, contact } from '../data/resume';
+import display from '../elements/display.jpeg';
 
 const RESUME_URL =
   'https://drive.google.com/file/d/1mPP5L1_OI7EXeEtkOPhOT-rqvJG0jiXQ/view?usp=sharing';
@@ -10,59 +11,65 @@ const RESUME_URL =
 function Landing() {
   return (
     <main className="landing">
+      {/* ---------- Fixed side rails ---------- */}
+      <aside className="rail rail-left" aria-hidden="false">
+        <a className="rail-icon" target="_blank" rel="noreferrer" href={contact.github} aria-label="GitHub">
+          <AiOutlineGithub size="1.25rem" />
+        </a>
+        <a className="rail-icon" target="_blank" rel="noreferrer" href={contact.linkedin} aria-label="LinkedIn">
+          <AiOutlineLinkedin size="1.25rem" />
+        </a>
+        <a className="rail-icon" target="_blank" rel="noreferrer" href={contact.instagram} aria-label="Instagram">
+          <AiOutlineInstagram size="1.25rem" />
+        </a>
+        <a className="rail-icon" target="_blank" rel="noreferrer" href={`mailto:${contact.email}`} aria-label="Email">
+          <AiOutlineMail size="1.25rem" />
+        </a>
+      </aside>
+      <aside className="rail rail-right" aria-hidden="false">
+        <a className="rail-email" href={`mailto:${contact.email}`}>{contact.email}</a>
+      </aside>
+
       {/* ---------- Hero ---------- */}
-      <section className="hero">
+      <section className="hero" id="top">
         <div className="hero-inner">
-          <div className="hero-eyebrow">Backend Software Engineer</div>
-          <h1 className="hero-name">
-            Hi there, I'm <span className="accent-text">Garvit Sadhwani</span>
-          </h1>
+          <p className="mono-eyebrow">Hi, my name is</p>
+          <h1 className="hero-name">Garvit Sadhwani.</h1>
+          <h2 className="hero-tagline">I build backend systems that scale.</h2>
           <p className="hero-sub">
-            I build high-scale backend systems — services running at
-            <strong> 800K+ RPM</strong> with <strong>sub-30ms p99</strong>, serving
-            <strong> 7M daily users</strong>.
+            I'm a Software Engineer II at <span className="accent-text">Zepto</span>, working on
+            high-scale backend services, running at <strong>800K+ RPM</strong> with{' '}
+            <strong>sub-30ms p99</strong> latencies and serving <strong>7M daily users</strong>.
           </p>
-          <div className="hero-cta">
-            <a className="btn btn-primary" target="_blank" rel="noreferrer" href={RESUME_URL}>
-              View Résumé
-            </a>
-            <a className="btn btn-ghost" href="/#/about">About me</a>
-          </div>
-          <div className="hero-socials">
-            <a className="icon-link" target="_blank" rel="noreferrer" href={contact.linkedin} aria-label="LinkedIn">
-              <AiOutlineLinkedin size="1.35rem" />
-            </a>
-            <a className="icon-link" target="_blank" rel="noreferrer" href={contact.github} aria-label="GitHub">
-              <AiOutlineGithub size="1.35rem" />
-            </a>
-            <a className="icon-link" target="_blank" rel="noreferrer" href={`mailto:${contact.email}`} aria-label="Email">
-              <AiOutlineMail size="1.35rem" />
-            </a>
-          </div>
+          <a className="btn-outline" target="_blank" rel="noreferrer" href={RESUME_URL}>
+            View Résumé
+          </a>
         </div>
       </section>
 
-      {/* ---------- Summary ---------- */}
-      <section className="section-block" id="summary">
-        <h2 className="section-heading">What I'm working on</h2>
-        <div className="glass summary-card">
-          <p className="summary-text">{summary}</p>
+      {/* ---------- About ---------- */}
+      <section className="section-block" id="about">
+        <h2 className="section-heading"><span className="sh-num">01.</span> About Me</h2>
+        <div className="about-grid">
+          <div className="about-text">
+            <p>{summary}</p>
+            <p>{aboutPersonal}</p>
+          </div>
+          <div className="about-photo-wrap">
+            <img className="about-photo" src={display} alt="Garvit Sadhwani" />
+          </div>
         </div>
       </section>
 
       {/* ---------- Experience ---------- */}
       <section className="section-block" id="experience">
-        <h2 className="section-heading">Experience</h2>
-        <div className="exp-list">
-          {experience.map((role, i) => (
-            <Experience key={i} role={role} />
-          ))}
-        </div>
+        <h2 className="section-heading"><span className="sh-num">02.</span> Where I've Worked</h2>
+        <ExperienceTabs roles={experience} />
       </section>
 
       {/* ---------- Projects ---------- */}
       <section className="section-block" id="projects">
-        <h2 className="section-heading">Projects</h2>
+        <h2 className="section-heading"><span className="sh-num">03.</span> Projects</h2>
         <div className="project-list">
           {projects.map((p, i) => (
             <Project key={i} project={p} />
@@ -72,31 +79,32 @@ function Landing() {
 
       {/* ---------- Education ---------- */}
       <section className="section-block" id="education">
-        <h2 className="section-heading">Education</h2>
-        <div className="glass edu-card">
+        <h2 className="section-heading"><span className="sh-num">04.</span> Education</h2>
+        <div className="edu-card">
           <div className="edu-head">
             <h3 className="edu-school">{education.school}</h3>
-            <span className="exp-dates">{education.dates}</span>
+            <span className="tab-dates">{education.dates}</span>
           </div>
           <p className="edu-degree">{education.degree}</p>
         </div>
       </section>
 
       {/* ---------- Contact ---------- */}
-      <footer className="contact" id="contact">
-        <h2 className="contact-title">Let's get in touch</h2>
-        <p className="contact-sub">Open to interesting backend and systems problems.</p>
-        <div className="contact-icons">
-          <a className="icon-link" target="_blank" rel="noreferrer" href={contact.linkedin} aria-label="LinkedIn">
-            <AiOutlineLinkedin size="1.5rem" />
-          </a>
-          <a className="icon-link" target="_blank" rel="noreferrer" href={contact.github} aria-label="GitHub">
-            <AiOutlineGithub size="1.5rem" />
-          </a>
-          <a className="icon-link" target="_blank" rel="noreferrer" href={`mailto:${contact.email}`} aria-label="Email">
-            <AiOutlineMail size="1.5rem" />
-          </a>
-        </div>
+      <section className="contact" id="contact">
+        <p className="mono-eyebrow center">05. What's Next?</p>
+        <h2 className="contact-title">Get In Touch</h2>
+        <p className="contact-sub">
+          I'm always happy to talk about backend and systems problems, or just to connect.
+          My inbox is open, so say hello.
+        </p>
+        <a className="btn-outline" href={`mailto:${contact.email}`}>Say Hello</a>
+      </section>
+
+      {/* ---------- Footer ---------- */}
+      <footer className="site-footer">
+        <a href="https://brittanychiang.com" target="_blank" rel="noreferrer">
+          Design inspired by Brittany Chiang
+        </a>
       </footer>
     </main>
   );
