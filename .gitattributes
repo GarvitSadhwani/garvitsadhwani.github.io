@@ -1,0 +1,7 @@
+# Normalize line endings; keep deploy-critical text files LF-only
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
