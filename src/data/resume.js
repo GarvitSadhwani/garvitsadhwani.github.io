@@ -1,5 +1,8 @@
 // Single source of truth for portfolio content. Edit here to update the site.
 
+export const resumeUrl =
+  'https://drive.google.com/file/d/1lZ3B97Igz7-s3A1E6DNVhyN3lQrm9Gjm/view?usp=sharing';
+
 // About section: current work + a personal line.
 export const summary = `I'm a Software Engineer II at Zepto, where I own the Fees, Fraud, and Loyalty backend services, systems that run at up to 800K requests per minute with sub-30ms p99 latency, serving 7M daily users. I take projects end to end: from PM requirements and technical design through implementation, rollout, and monitoring. Recent work includes a knapsack-DP engine for resolving cart limits that added ~$12.5K in daily revenue, async fraud-account clustering over Kafka that surfaced rings of 500+ fake accounts, and a Go SDK that removed 600K RPM of inter-service traffic. I care most about latency, reliability, and cost.`;
 

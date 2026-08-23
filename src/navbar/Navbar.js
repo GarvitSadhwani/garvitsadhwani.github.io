@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
-
-const RESUME_URL =
-  'https://drive.google.com/file/d/1mPP5L1_OI7EXeEtkOPhOT-rqvJG0jiXQ/view?usp=sharing';
+import { resumeUrl } from '../data/resume';
 
 const LINKS = [
   { id: 'about', label: 'About' },
@@ -50,7 +48,7 @@ function Navbar() {
             {l.label}
           </a>
         ))}
-        <a className="navbar-resume" target="_blank" rel="noreferrer" href={RESUME_URL}>
+        <a className="navbar-resume" target="_blank" rel="noreferrer" href={resumeUrl}>
           Resume
         </a>
       </div>

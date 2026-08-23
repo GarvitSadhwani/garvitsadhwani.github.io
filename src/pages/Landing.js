@@ -2,11 +2,8 @@ import React from 'react';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail, AiOutlineInstagram } from 'react-icons/ai';
 import ExperienceTabs from '../components/ExperienceTabs';
 import Project from '../components/Project';
-import { summary, aboutPersonal, experience, projects, education, contact } from '../data/resume';
+import { resumeUrl, summary, aboutPersonal, experience, projects, education, contact } from '../data/resume';
 import display from '../elements/display.jpeg';
-
-const RESUME_URL =
-  'https://drive.google.com/file/d/1mPP5L1_OI7EXeEtkOPhOT-rqvJG0jiXQ/view?usp=sharing';
 
 function Landing() {
   return (
@@ -41,7 +38,7 @@ function Landing() {
             high-scale backend services, running at <strong>800K+ RPM</strong> with{' '}
             <strong>sub-30ms p99</strong> latencies and serving <strong>7M daily users</strong>.
           </p>
-          <a className="btn-outline" target="_blank" rel="noreferrer" href={RESUME_URL}>
+          <a className="btn-outline" target="_blank" rel="noreferrer" href={resumeUrl}>
             View Résumé
           </a>
         </div>
