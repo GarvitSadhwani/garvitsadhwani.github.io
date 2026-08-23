@@ -8,6 +8,21 @@ export const aboutPersonal = `I did my dual degree in Electrical & Electronics E
 // Grouped, summarised roles (Cisco full-time + internships).
 export const experience = [
   {
+    tabLabel: 'Zepto',
+    role: 'Software Engineer II',
+    org: 'Zepto',
+    dates: 'Oct 2024 – Present',
+    bullets: [
+      'Own the Fees, Fraud, and Loyalty backend services end to end — systems running at up to 800K RPM with sub-30ms p99 latency, serving 7M daily users.',
+      'Designed a knapsack-DP engine to resolve cart limit violations; +4% order completion in A/B testing, now at 100% rollout (~$12.5K in additional daily revenue).',
+      'Built async fraud-account clustering over Kafka with DLQ recovery, surfacing rings of 500+ fraudulent accounts.',
+      'Shipped a Go SDK and encrypted-header mechanism for loyalty data propagation — adopted by 5 teams, removing ~600K RPM of inter-service traffic.',
+      'Built in-house currency crediting from scratch (idempotency, retries, partial cancellations, Kafka DLQ recovery), holding full reliability through ~300 downstream failures.',
+      'Cut Fees-service Redis load via MGET consolidation (latency 1.3ms → 0.4ms) and drove ~$3K/month in infrastructure savings.',
+    ],
+    tags: ['Go', 'Kafka', 'Redis', 'MongoDB', 'gRPC', 'AWS'],
+  },
+  {
     tabLabel: 'Cisco',
     role: 'Software Engineer',
     org: 'Cisco',
