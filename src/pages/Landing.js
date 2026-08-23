@@ -32,7 +32,7 @@ function Landing() {
         <div className="hero-inner">
           <p className="mono-eyebrow">Hi, my name is</p>
           <h1 className="hero-name">Garvit Sadhwani.</h1>
-          <h2 className="hero-tagline">I build backend systems that scale.</h2>
+          <h2 className="hero-tagline">I build solutions that scale.</h2>
           <p className="hero-sub">
             I'm a Software Engineer II at <span className="accent-text">Zepto</span>, working on
             high-scale backend services, running at <strong>800K+ RPM</strong> with{' '}
