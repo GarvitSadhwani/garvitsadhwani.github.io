@@ -1,7 +1,8 @@
 import React from 'react';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 import Experience from '../components/Experience';
-import { experience, skills, education, contact } from '../data/resume';
+import Project from '../components/Project';
+import { summary, experience, projects, education, contact } from '../data/resume';
 
 const RESUME_URL =
   'https://drive.google.com/file/d/1mPP5L1_OI7EXeEtkOPhOT-rqvJG0jiXQ/view?usp=sharing';
@@ -41,6 +42,14 @@ function Landing() {
         </div>
       </section>
 
+      {/* ---------- Summary ---------- */}
+      <section className="section-block" id="summary">
+        <h2 className="section-heading">What I'm working on</h2>
+        <div className="glass summary-card">
+          <p className="summary-text">{summary}</p>
+        </div>
+      </section>
+
       {/* ---------- Experience ---------- */}
       <section className="section-block" id="experience">
         <h2 className="section-heading">Experience</h2>
@@ -51,19 +60,12 @@ function Landing() {
         </div>
       </section>
 
-      {/* ---------- Skills ---------- */}
-      <section className="section-block" id="skills">
-        <h2 className="section-heading">Technical Skills</h2>
-        <div className="skills-grid">
-          {skills.map((s) => (
-            <div className="glass skill-card" key={s.group}>
-              <div className="skill-group">{s.group}</div>
-              <div className="skill-pills">
-                {s.items.map((it) => (
-                  <span className="pill" key={it}>{it}</span>
-                ))}
-              </div>
-            </div>
+      {/* ---------- Projects ---------- */}
+      <section className="section-block" id="projects">
+        <h2 className="section-heading">Projects</h2>
+        <div className="project-list">
+          {projects.map((p, i) => (
+            <Project key={i} project={p} />
           ))}
         </div>
       </section>

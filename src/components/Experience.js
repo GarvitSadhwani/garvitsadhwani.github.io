@@ -1,6 +1,6 @@
 import React from 'react';
 
-// A single role rendered as a glass card with detailed bullets.
+// A single role rendered as a concise glass card.
 function Experience({ role }) {
   return (
     <article className="glass exp-card">
@@ -12,13 +12,7 @@ function Experience({ role }) {
         <span className="exp-dates">{role.dates}</span>
       </div>
 
-      {role.summary && <p className="exp-summary">{role.summary}</p>}
-
-      <ul className="exp-bullets">
-        {role.bullets.map((b, i) => (
-          <li key={i}>{b}</li>
-        ))}
-      </ul>
+      <p className="exp-desc">{role.desc}</p>
 
       {role.tags && role.tags.length > 0 && (
         <div className="exp-tags">
