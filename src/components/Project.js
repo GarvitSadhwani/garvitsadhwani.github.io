@@ -1,10 +1,14 @@
 import React from 'react';
 import { AiOutlineGithub, AiFillFolder } from 'react-icons/ai';
 import simplitask1 from '../elements/simplitask1.jpg';
+import stift from '../elements/stift.jpg'
+import handgest from '../elements/handgest.jpg'
 
 // Map data-file names to bundled imports (CRA can't import by dynamic string).
 const IMAGES = {
   'simplitask1.jpg': simplitask1,
+  'stift.jpg': stift,
+  'handgest.jpg': handgest,
 };
 
 function Project({ project }) {
