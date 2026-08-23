@@ -57,7 +57,7 @@ export const projects = [
       'A full-stack dashboard (React · Node/Express · PostgreSQL) for building and running strategies: defining indicators, scheduling jobs, and monitoring results from a single view.',
     tags: ['React', 'Node.js', 'PostgreSQL'],
     repo: 'https://github.com/GarvitSadhwani/stift',
-    image: null, // TODO: original screenshot was lost in cleanup — awaiting a new one.
+    image: 'stift.jpg',
   },
   {
     title: 'Task Management App',
@@ -73,7 +73,7 @@ export const projects = [
       'A C++ / OpenCV console app that automates simple desktop tasks through hand gestures: volume control, screen capture, and restart; with a calibration interface for tuning sensitivity.',
     tags: ['C++', 'OpenCV'],
     repo: 'https://github.com/GarvitSadhwani/HandGesture',
-    image: null,
+    image: 'handgest.jpg',
   },
 ];
 
