@@ -4,7 +4,7 @@ export const resumeUrl =
   'https://drive.google.com/file/d/1yka2k0ufyEsrwtQ0FlAAqYsOaExUxR88/view?usp=sharing';
 
 // About section: current work + a personal line.
-export const summary = `I'm a Software Engineer II at Zepto, where I own the Fees, Fraud, and Loyalty backend services, systems that run at up to 800K requests per minute with sub-30ms p99 latency, serving 7M daily users. I take projects end to end: from PM requirements and technical design through implementation, rollout, and monitoring. Recent work includes a knapsack-DP engine for resolving cart limits that added ~$12.5K in daily revenue, async fraud-account clustering over Kafka that surfaced rings of 500+ fake accounts, and a Go SDK that removed 600K RPM of inter-service traffic. I care most about latency, reliability, and cost.`;
+export const summary = `I'm a Software Engineer II at Zepto, where I own the Fees, Fraud, and Loyalty backend services, systems that run at up to 800K requests per minute with sub-30ms p99 latency, serving 7M daily users. I take projects end to end: from PM requirements and technical design through implementation, rollout, and monitoring. Recent work includes a knapsack-DP engine for resolving cart limits that added ~$12.5K in daily revenue, async fraud-account clustering over Kafka that surfaced rings of 1500+ fake accounts, and a Go SDK that removed 600K RPM of inter-service traffic. I care most about latency, reliability, and cost.`;
 
 export const aboutPersonal = `I did my dual degree in Electrical & Electronics Engineering at BITS Pilani and I'm currently based in Bengaluru. Away from the keyboard you'll find me playing football, gaming, reading, or planning the next trip, a beach person all the way.`;
 
