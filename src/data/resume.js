@@ -4,9 +4,7 @@ export const resumeUrl =
   'https://drive.google.com/file/d/1yka2k0ufyEsrwtQ0FlAAqYsOaExUxR88/view?usp=sharing';
 
 // About section: current work + a personal line.
-export const summary = `I'm a Software Engineer II at Zepto, where I own the Fees, Fraud, and Loyalty backend services, systems that run at up to 800K requests per minute with sub-30ms p99 latency, serving 7M daily users. I take projects end to end: from PM requirements and technical design through implementation, rollout, and monitoring. Recent work includes a knapsack-DP engine for resolving cart limits that added ~$12.5K in daily revenue, async fraud-account clustering over Kafka that surfaced rings of 1500+ fake accounts, and a Go SDK that removed 600K RPM of inter-service traffic. I care most about latency, reliability, and cost.`;
-
-export const aboutPersonal = `I did my dual degree in Electrical & Electronics Engineering at BITS Pilani and I'm currently based in Bengaluru. Away from the keyboard you'll find me playing football, gaming, reading, or planning the next trip, a beach person all the way.`;
+export const summary = `I'm a backend engineer who enjoys taking complicated problems and turning them into simple, reliable systems. I'm currently a Software Engineer II at Zepto, working across Fees, Fraud, and Loyalty. I spend most of my time thinking about scalability, performance, and how to build systems that don't just work, but actually move the needle for the business. I enjoy owning problems end to end, from figuring out what needs to be built to designing, shipping, and making sure it works in the real world. I studied Electrical & Electronics Engineering at BITS Pilani and am now based in Bengaluru. \n\n I'm naturally curious and a bit of a critical thinker. I'm interested in technology beyond just the code, particularly how good engineering can translate into better products and better business outcomes. I'd love to eventually work on problems that are increasingly global in scale. When I'm not coding, I'm usually playing football, gaming, reading, or looking for an excuse to plan another trip. Preferably somewhere with a beach :)`;
 
 // Grouped, summarised roles (Cisco full-time + internships).
 export const experience = [
@@ -58,14 +56,6 @@ export const projects = [
     tags: ['React', 'Node.js', 'PostgreSQL'],
     repo: 'https://github.com/GarvitSadhwani/stift',
     image: 'stift.jpg',
-  },
-  {
-    title: 'Task Management App',
-    desc:
-      'A full-stack task manager built with Go and PostgreSQL. User authentication for each account, with tasks ordered by their scheduled time and added or deleted dynamically.',
-    tags: ['Go', 'PostgreSQL'],
-    repo: 'https://github.com/GarvitSadhwani/todoApp',
-    image: 'simplitask1.jpg',
   },
   {
     title: 'Hand Gesture Sensing',
