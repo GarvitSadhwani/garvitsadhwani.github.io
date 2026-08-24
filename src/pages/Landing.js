@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail, AiOutlineInstagram } from 'react-icons/ai';
 import ExperienceTabs from '../components/ExperienceTabs';
 import Project from '../components/Project';
-import { resumeUrl, summary, aboutPersonal, experience, projects, education, contact } from '../data/resume';
+import { resumeUrl, summary, experience, projects, education, contact } from '../data/resume';
 import display from '../elements/display.jpeg';
 
 function Landing() {
@@ -49,8 +49,9 @@ function Landing() {
         <h2 className="section-heading"><span className="sh-num">01.</span> About Me</h2>
         <div className="about-grid">
           <div className="about-text">
-            <p>{summary}</p>
-            <p>{aboutPersonal}</p>
+            {summary.split(/\n+/).map((para, i) => (
+              <p key={i}>{para.trim()}</p>
+            ))}
           </div>
           <div className="about-photo-wrap">
             <img className="about-photo" src={display} alt="Garvit Sadhwani" />
