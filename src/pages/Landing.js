@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail, AiOutlineInstagram } from 'react-icons/ai';
 import ExperienceTabs from '../components/ExperienceTabs';
 import Project from '../components/Project';
@@ -38,9 +39,12 @@ function Landing() {
             high-scale backend services, running at <strong>800K+ RPM</strong> with{' '}
             <strong>sub-30ms p99</strong> latencies and serving <strong>7M daily users</strong>.
           </p>
-          <a className="btn-outline" target="_blank" rel="noreferrer" href={resumeUrl}>
-            View Résumé
-          </a>
+          <div className="hero-cta">
+            <Link className="btn-outline" to="/writings">Writings</Link>
+            <a className="btn-outline" target="_blank" rel="noreferrer" href={resumeUrl}>
+              View Résumé
+            </a>
+          </div>
         </div>
       </section>
 
