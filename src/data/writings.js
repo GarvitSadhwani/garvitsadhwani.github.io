@@ -1,8 +1,5 @@
-// Deep-dive writings.
-//
-// NOTE: this content includes specific figures and a key schema provided for
-// publication. Review before pushing to main to confirm you're comfortable
-// making these details public.
+// Deep-dive writings — general system-design write-ups (no company-specific or
+// confidential data). Review before pushing to main.
 //
 // Images: put files in src/elements, `import` them at the top of this file, and
 // reference the imported value in a `cover` field or an { type: 'image', src }
@@ -12,19 +9,17 @@
 //   { type: 'list',      items: [] }
 //   { type: 'code',      code, lang }
 //   { type: 'image',     src, caption }   // src is an imported image (or null)
+//   { type: 'gallery',   items: [] }      // click-to-expand grid of images
 
 import optimisation from '../elements/optimisation.png';
-import redisHashSlots from '../elements/redis_hashslots.png';
-import redisRes1 from '../elements/redis_res1.jpeg';
-import redisRes2 from '../elements/redis_res2.jpeg';
-import redisRes3 from '../elements/redis_res3.jpeg';
+import redisHashSlots from '../elements/redis_hashslots.jpg';
 
 export const writings = [
   {
     slug: 'redis-mget-at-scale',
-    title: 'Cutting Redis Load at 200K RPM with a Single MGET',
+    title: 'Cutting Redis Load at Scale with a Single MGET',
     description:
-      'How consolidating many per-request Redis reads into one MGET cut load and tail latency on a fees service running at 200K RPM peak.',
+      'How consolidating many per-request Redis reads into one MGET cuts load and tail latency for a high throughput service.',
     date: '2026',
     cover: optimisation,
     blocks: [
@@ -32,18 +27,18 @@ export const writings = [
       {
         type: 'paragraph',
         text:
-          'At Zepto, the fees service computes delivery fees on the hot path of every order, running at roughly 200K requests per minute at peak. Each request needs several independent pieces of data cached in Redis: the store\'s stress level, live rain and weather details, the user\'s delivery-fee MOV (minimum order value), and more.',
+          'Assume a service that, on the hot path of every request, needs several independent pieces of data cached in Redis, each value stored under its own key. And assume it runs at roughly 200K requests per minute at peak.',
       },
       {
         type: 'paragraph',
         text:
-          'Originally each of those values was fetched with its own Redis call. So a single incoming request fanned out into multiple separate round trips to Redis, one per piece of data.',
+          'Originally each of those values is fetched with its own Redis call, so a single incoming request fans out into multiple separate round trips to Redis, one per piece of data.',
       },
       { type: 'heading', text: 'The problem' },
       {
         type: 'paragraph',
         text:
-          'At 200K RPM, those extra round trips add up fast. Fetching each key separately meant a lot of network bandwidth occupied and heavy connection contention, which put significant load on Redis. At peak, that showed up as a spike in p99 latency, the tail stretched exactly when traffic was highest and it mattered most.',
+          'At 200K RPM, those extra round trips add up fast. Fetching each key separately means a lot of network bandwidth occupied and heavy connection contention, which puts significant load on Redis. At peak, that may show up as a spike in p99 latency, the tail stretches exactly when traffic is highest and it matters most.',
       },
       { type: 'heading', text: 'The fix: one MGET instead of many GETs' },
       {
@@ -54,7 +49,7 @@ export const writings = [
       {
         type: 'code',
         lang: 'text',
-        code: 'GET  u123_stress\nGET  u123_rain      →   MGET {u123}_stress {u123}_rain {u123}_mov\nGET  u123_mov           (1 round trip)\n(3 round trips)',
+        code: 'GET  user123_data1\nGET  user123_data2   →   MGET {user123}_data1 {user123}_data2 {user123}_data3\nGET  user123_data3       (1 round trip)\n(3 round trips)',
       },
       { type: 'heading', text: 'Making MGET efficient in a clustered setup' },
       {
@@ -65,12 +60,12 @@ export const writings = [
       {
         type: 'paragraph',
         text:
-          'So the keys were structured as {id}_suffix: the entity id in braces, then the field. Every key for a given entity hashes on the same id and therefore lands on the same slot, so they can all be fetched in a single MGET.',
+          'So the keys are structured as {id}_suffix: the entity id in braces, then the field. Every key for a given entity hashes on the same id and therefore lands on the same slot, so they can all be fetched in a single MGET.',
       },
       {
         type: 'code',
         lang: 'text',
-        code: '{12345}_stress\n{12345}_rain      →  all hash on "12345" → same slot → one MGET\n{12345}_mov',
+        code: '{user123}_data1\n{user123}_data2   →  all hash on "user123" → same slot → one MGET\n{user123}_data3',
       },
       {
         type: 'image',
@@ -81,12 +76,12 @@ export const writings = [
       {
         type: 'list',
         items: [
-          'Redis read throughput dropped from ~5K to ~1.5K RPS.',
-          'Redis CPU roughly halved, from ~10% to ~5%.',
-          'Redis latency fell from ~1.3ms to ~0.4ms.',
+          'Redis read throughput reduction by 70%',
+          'Redis CPU usage roughly halved.',
+          'Improvement in Redis latency ~70%',
+          'Adding any new datapoint in future has no effect on read throughput, network bandwidth or connections',
         ],
       },
-      { type: 'gallery', items: [redisRes1, redisRes2, redisRes3] },
     ],
   },
 ];
