@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { resumeUrl } from '../data/resume';
 
@@ -12,6 +13,8 @@ const LINKS = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -20,11 +23,24 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const scrollToId = (id) => {
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const scrollTo = (id) => (e) => {
     e.preventDefault();
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (location.pathname !== '/') {
+      // Come back to the landing page first, then scroll to the section.
+      navigate('/');
+      setTimeout(() => scrollToId(id), 60);
+    } else {
+      scrollToId(id);
+    }
   };
 
   return (
@@ -48,6 +64,9 @@ function Navbar() {
             {l.label}
           </a>
         ))}
+        <Link className="navbar-link navbar-link-featured" to="/writings" onClick={() => setMenuOpen(false)}>
+          Writings
+        </Link>
         <a className="navbar-resume" target="_blank" rel="noreferrer" href={resumeUrl}>
           Resume
         </a>
