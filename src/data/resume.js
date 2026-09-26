@@ -1,7 +1,7 @@
 // Single source of truth for portfolio content. Edit here to update the site.
 
 export const resumeUrl =
-  'https://drive.google.com/file/d/1yka2k0ufyEsrwtQ0FlAAqYsOaExUxR88/view?usp=sharing';
+  'https://drive.google.com/file/d/1dTXfoC6s2E9YHBdQL8jebvdsF-CLNZNR/view?usp=sharing';
 
 // About section: current work + a personal line.
 export const summary = `I'm a backend engineer who enjoys taking complicated problems and turning them into simple, reliable systems. I'm currently a Software Engineer II at Zepto, working across Fees, Fraud, and Loyalty. I spend most of my time thinking about scalability, performance, and how to build systems that don't just work, but actually move the needle for the business. I enjoy owning problems end to end, from figuring out what needs to be built to designing, shipping, and making sure it works in the real world. I studied Electrical & Electronics Engineering at BITS Pilani and am now based in Bengaluru. \n\n I'm naturally curious and a bit of a critical thinker. I'm interested in technology beyond just the code, particularly how good engineering can translate into better products and better business outcomes. I'd love to eventually work on problems that are increasingly global in scale. When I'm not coding, I'm usually playing football, gaming, reading, or looking for an excuse to plan another trip. Preferably somewhere with a beach :)`;
